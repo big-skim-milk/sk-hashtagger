@@ -24,15 +24,10 @@ Here is a typical example:
 
   
     tagger($w('#text1'), {
-    
-      tags: $w('#dynamicDataset').getCurrentItem().hashtags,
-      
-      font_size: 18,
-      
-      ratio: 1.3,
-      
-      delimiter: ', '
-      
+      tags: $w('#dynamicDataset').getCurrentItem().hashtags,      
+      font_size: 18,      
+      ratio: 1.3,      
+      delimiter: ', '      
     }, (tag) => console.log(tag));
 
 
