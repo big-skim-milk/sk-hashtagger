@@ -16,7 +16,7 @@ The function takes three arguments: *element*, *options*, and *callback*.
 Callback returns tag clicked as a string, and for now, element requires the $w wrapper syntax.
 
 
-Import statement:
+**Import statement:**
 
 import { tagger } from 'public/sk-tagger.js';
 
