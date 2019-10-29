@@ -44,8 +44,6 @@ OPTIONS (in order of importance)
   Required. Property you pass your tags to. Currently supports only strings. A typical collection field value:
   "Science, Big Data, Lizard People"
   
-  Or you can use a static value if you're boring.
-
 
 .font_size: number -
   Optional. Only supports px values currently.
