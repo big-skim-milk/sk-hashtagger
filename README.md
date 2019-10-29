@@ -3,9 +3,12 @@ A tiny utility to reduce collection/database size and turn single wix text eleme
 
 
 SETUP
+
 Simply copy paste the tagger.js file into a new Public file and name it 'sk-tagger'.
 
+
 USAGE
+
 The function takes three arguments: element, options, and callback.
 
 Callback returns tag clicked as a string, and for now, element requires the $w wrapper syntax.
