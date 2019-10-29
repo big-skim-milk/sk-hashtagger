@@ -21,7 +21,7 @@ Callback returns tag clicked as a string, and for now, element requires the $w w
 import { tagger } from 'public/sk-tagger.js';
 
 
-A typical example:
+**A typical example:**
 
   
     tagger($w('#text1'), {
