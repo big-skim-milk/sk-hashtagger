@@ -3,13 +3,13 @@ A tiny utility to reduce collection/database size and turn single wix text eleme
 
 
 
-##SETUP
+## SETUP
 
 Simply copy paste the tagger.js file into a new Public file and name it **'sk-tagger'**.
 
 
 
-##USAGE
+## USAGE
 
 The function takes three arguments: *element*, *options*, and *callback*.
 
@@ -33,7 +33,7 @@ A typical example:
 
 
 
-##OPTIONS (in order of importance)
+## OPTIONS (in order of importance)
 
 
 **.tags: string** -
