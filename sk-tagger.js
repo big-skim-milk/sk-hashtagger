@@ -5,7 +5,7 @@ export function tagger(element, options, callback) {
    let sum = 0,
     str = '',
     tags = [],
-    data = options.hashtags.split(options.delimiter).map(d => { return { k: function () { return Math.round(this.t.length * ((options.font_size + options.whitespace) * options.ratio * 0.49)) }, t: `${options.symbol ? '#' : ''}${d}` }; });
+    data = options.tags.split(options.delimiter).map(d => { return { k: function () { return Math.round(this.t.length * ((options.font_size + options.whitespace) * options.ratio * 0.49)) }, t: `${options.symbol ? '#' : ''}${d}` }; });
   data.forEach((im, ix, arr) => {
    str += options.href ? '<a href="' + options.href[ix] + (options.target ? '" target="' + options.target + '"': '') + `>${im.t}</a>${'&nbsp;'.repeat(options.whitespace)}` : `${im.t}${'&nbsp;'.repeat(options.whitespace)}`;
    tags.push({ ln: im.k() + options.font_size });
