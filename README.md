@@ -3,6 +3,7 @@ A tiny utility to reduce collection/database size and turn single wix text eleme
 
 
 **v0.2 updates**
+
 **--** .tags property now accepts strings and arrays.
 
 **--** .href property now accepts strings and arrays.
