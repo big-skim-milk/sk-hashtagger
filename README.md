@@ -1,6 +1,15 @@
-# sk-hashtagger
+# sk-hashtagger v0.2
 A tiny utility to reduce collection/database size and turn single wix text elements into functional hashtags.
 
+
+**v0.2 updates**
+**--** .tags property now accepts strings and arrays.
+
+**--** .href property now accepts strings and arrays.
+
+**--** Split .formatting property into .format_all and .format_tag for more granular control of styling
+
+**--** .delimiter property now has default: ', '
 
 
 ## SETUP
@@ -13,7 +22,7 @@ Simply copy paste the tagger.js file into a new Public file and name it **'sk-ta
 
 The function takes three arguments: *element*, *options*, and *callback*.
 
-Callback returns tag clicked as a string, and for now, element requires the $w wrapper syntax.
+Callback returns tag clicked as a string. *element* can be $w() object, string, or array of either.
 
 
 **Import statement:**
@@ -23,21 +32,31 @@ import { tagger } from 'public/sk-tagger.js';
 
 **A typical example:**
 
-  
-    tagger($w('#text1'), {
-      tags: $w('#dynamicDataset').getCurrentItem().hashtags,      
-      font_size: 18,      
-      ratio: 1.3,      
-      delimiter: ', '      
-    }, (tag) => console.log(tag));
+  	tagger(['text7'], {
+		tags: $w('#dynamicDataset').getCurrentItem().tags,
+		font_size: 18,
+		ratio: 1.6,
+		symbol: false,
+		delimiter: ', ',
+		whitespace: 2,
+		format_all: `color:#fff;`,
+		format_tag: `background-color:#000;
+			padding-top:3px;
+			padding-bottom:3px;
+			padding-right:6px;
+			padding-left:6px;
+			border-radius:3px;`,
+		href: ['https://duck.com', 'https://startpage.com', 'https://quant.com'],
+		target: '_blank',
+	}, tag => console.log(tag));
 
 
 
 ## OPTIONS (in order of importance)
 
 
-**.tags: string** -
-  Required. Property you pass your tags to. Currently supports only strings. A typical collection field value:
+**.tags: string/array** -
+  Required. Property you pass your tags to. A typical collection field value:
   "Science, Big Data, Lizard People"
   
 
@@ -50,18 +69,22 @@ import { tagger } from 'public/sk-tagger.js';
   
   
 **.delimiter: string** -
-  Required. Added in case your values are not comma separated.
+  Optional. In case your .tags and .href values are not comma separated, default is JSON style comma.
   
   
 **.whitespace: number** -
   Optional. Inserts n number of non-breaking spaces between tags.
   
   
-**.formatting: string** -
-  Optional. Adds inline CSS properties to the html string.
+**.format_all: string** -
+  Optional. Adds inline CSS properties to the entire html string.
   
   
-**.href: array** -
+**.format_tag: string** -
+  Optional. Adds inline CSS properties to each tag's html string.
+  
+  
+**.href: string/array** -
   Optional. You can use wixLocation.to() in your callback if you want, but an href will be better for accessibility.
   
   
